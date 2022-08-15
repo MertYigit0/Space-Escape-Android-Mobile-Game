@@ -70,9 +70,9 @@ public class MyGame extends ApplicationAdapter implements Screen{
        explosionSound = Gdx.audio.newSound(Gdx.files.internal("explosion.wav"));
        gameMusic = Gdx.audio.newMusic(Gdx.files.internal("gameMusic.wav"));
 
-       gameMusic.setVolume(0.6f);
-       gameMusic.setLooping(true);
-       gameMusic.play();
+        gameMusic.setVolume(0.6f);
+        gameMusic.setLooping(true);
+        gameMusic.play();
 
         generator = new FreeTypeFontGenerator(Gdx.files.internal("robotobold.ttf"));
         FreeTypeFontGenerator.FreeTypeFontParameter parameter = new FreeTypeFontGenerator.FreeTypeFontParameter();
@@ -162,7 +162,7 @@ public class MyGame extends ApplicationAdapter implements Screen{
 
         if (gameState == 1) {
 
-
+            gameMusic.play();
 
             if (enemyX[scoredEnemy] < airShipX ){
                 score++;
@@ -325,7 +325,7 @@ public class MyGame extends ApplicationAdapter implements Screen{
             //game finished
         }else if (gameState == 2 ){
            // spaceEscape.setScreen(new HighScore(spaceEscape,getScore()));
-
+            gameMusic.stop();
             new HighScore(spaceEscape , getScore() );
 
             //tap icons
